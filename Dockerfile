@@ -10,8 +10,8 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install OpenTelemetry bootstrap packages
-RUN python -m opentelemetry.instrumentation.bootstrap -a install
+# # Install OpenTelemetry bootstrap packages
+# RUN python -m opentelemetry.instrumentation.bootstrap -a install
 
 # Set environment variables for HyperDX OpenTelemetry
 ENV HYPERDX_API_KEY=''
