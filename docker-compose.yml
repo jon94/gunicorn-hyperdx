@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "7070:7070"
+    environment:
+      - HYPERDX_API_KEY=4f4f3aad-8bd0-46e6-87d8-57a45dd85ae8
+      - OTEL_SERVICE_NAME=gunicorn-hyperdx
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
+      - HYPERDX_ENABLE_ADVANCED_NETWORK_CAPTURE=1
+    networks:
+      - hdx-oss_internal
+
+networks:
+  hdx-oss_internal:
+    external: true
