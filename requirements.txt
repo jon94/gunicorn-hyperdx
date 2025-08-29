@@ -2,3 +2,5 @@ flask==2.3.2
 gunicorn==20.1.0
 hyperdx-opentelemetry
 opentelemetry-distro
+opentelemetry-instrumentation-flask
+opentelemetry-instrumentation-requests
