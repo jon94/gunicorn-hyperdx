@@ -23,5 +23,5 @@ ENV DEBUG='true'
 # Make port 7070 available to the world outside this container
 EXPOSE 7070
 
-# Run app.py when the container launches with OpenTelemetry instrumentation
-CMD ["opentelemetry-instrument", "gunicorn", "-w", "4", "-b", "0.0.0.0:7070", "wsgi:application"]
+# Run app.py when the container launches (OpenTelemetry configured via post-fork hook)
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:7070", "wsgi:application"]
